@@ -110,19 +110,18 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-const nth = function (d) {
-  if (d > 3 && d < 21) return 'th';
-  switch (d % 10) {
-    case 1: return "st";
-    case 2: return "nd";
-    case 3: return "rd";
-    default: return "th";
-  }
-}
-
 function scoreboard(callback, inn) {
   let score = { Home: 0, Away: 0 };
-
+  const nth = function (d) {
+    if (d > 3 && d < 21) return 'th';
+    switch (d % 10) {
+      case 1: return "st";
+      case 2: return "nd";
+      case 3: return "rd";
+      default: return "th";
+    }
+  }
+  
   for (let i = 1; i <= inn; i++) {
     score.Home += callback();
     score.Away += callback();
