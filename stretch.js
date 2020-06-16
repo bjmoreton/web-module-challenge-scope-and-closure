@@ -1,5 +1,5 @@
-const createBase = add => {
-    return (num) => num + add;
+const createBase = base => {
+    return (num) => num + base;
   };
   
   var addSix = createBase(6);

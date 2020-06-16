@@ -61,7 +61,7 @@ function inning(/*Code Here*/) {
   return Math.round(Math.random() * 2);
 
 }
-console.log(inning());
+console.log("inning: ", inning());
 
 /* Task 3: finalScore()
 
@@ -87,7 +87,7 @@ function finalScore(callback, inn) {
 
   return score;
 }
-console.log(finalScore(inning, 9));
+console.log("finalScore: ", finalScore(inning, 9));
 
 /* Task 4: 
 
@@ -112,7 +112,7 @@ Final Score: 6 - 10 */
 
 function scoreboard(callback, inn) {
   let score = { Home: 0, Away: 0 };
-  const nth = function (d) {
+  const nth = d => {
     if (d > 3 && d < 21) return 'th';
     switch (d % 10) {
       case 1: return "st";
@@ -129,7 +129,7 @@ function scoreboard(callback, inn) {
     console.log(`${i}${nth(i)} inning: ${score.Home} - ${score.Away}`)
   }
 
-  return `Final Score: ${score.Home} - ${score.Away}`;
+  return `\r\nFinal Score: ${score.Home} - ${score.Away}`;
 }
 
 console.log(scoreboard(inning, 9));
